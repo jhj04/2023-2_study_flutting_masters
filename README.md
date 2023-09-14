@@ -1,5 +1,5 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=flutting%20masters&fontSize=80)
-![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=footer&text=2023-2%20플러팅%20장인들&fontSize=50)
+![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=flutting%20masters&fontSize=80&fontAlignY=35&descAlignY=0&fontColor=000000)
+![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=footer&text=2023-2%20플러팅%20장인들&fontSize=50&descAlignY=0&fontAlignY=70&fontColor=000000)
 
 <a href="https://www.notion.so/08fe6d242f3b482cb113db001ac646da?v=8c1de66a928a403cb0ebb7caaff02176"><img src="https://img.shields.io/badge/NOTION-00000?style=flat-square&logo=Notion&logoColor=white"/></a>   플러팅 장인들의 노션 페이지 입니다!
 
