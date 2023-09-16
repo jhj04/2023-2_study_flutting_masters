@@ -1,0 +1,38 @@
+2강 : 가로세로 배치와 Scaffold
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+
+     return MaterialApp(
+       home: /* Scaffold( //앱 화면을 자동으로 분할해주는 위젯
+         appBar: AppBar(), //앱의 상단, AppBar위젯 사용.
+         body: // 앱의 중간
+
+#가로 세로 배치 관련
+          Row () : 가로 배치
+          Column() : 세로 배치
+   children:[
+             Icon(Icons.star),
+             Icon(Icons.star),
+             Icon(Icons.star), ] // children 사용해서 가로/세로 로 정렬.
+           
+  Container( child: Icon(Icons.star) ) // 위젯 속 위젯을 나타내기.
+
+           mainAxisAlignment: MainAxisAlignment.spaceEvenly, //메인 배치로 정렬. Row 일 때는 가로
+           crossAxisAlignment: CrossAxisAlignment.center //메인 외 배치로 정렬, Row 일 때 세로로.
+           
+         ),
+         bottomNavigationBar: // 앱의 하단, BottomAppBar 위젯 사용. 
+BottomAppBar( child: Text('under')), //텍스트 위젯 넣을 수 있음.
+       )
+     ); */
+}
+}
