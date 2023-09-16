@@ -1,0 +1,62 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp()); // runApp() : 앱 시작
+}
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+
+    return MaterialApp( //main 페이지 //MaterialApp -> 커스터마이징 할때
+      home: Scaffold(
+        appBar: AppBar(backgroundColor: Colors.blue),
+        body: ListView(
+          children: [
+            Profile(),
+            Profile(),
+            Profile()
+          ]
+        ),
+        bottomNavigationBar: BottomAppBar(child: Bottom(),),
+      )
+
+
+    );
+  }
+}
+class Profile extends StatelessWidget {
+  const Profile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Row(
+      children: [
+        Icon(Icons.perm_identity_rounded, color: Colors.black,weight: 50,),
+        Text("홍길동", style: TextStyle(color: Colors.black, fontSize: 15),)
+      ],
+    );
+  }
+}
+class Bottom extends StatelessWidget {
+  const Bottom({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 50,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+
+        children: [
+          Icon(Icons.call, color: Colors.black,),
+          Icon(Icons.message, color: Colors.black),
+          Icon(Icons.contact_page, color: Colors.black)
+        ],
+      ),
+    );
+  }
+}
+
+
