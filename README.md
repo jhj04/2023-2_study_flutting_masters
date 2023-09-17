@@ -49,6 +49,7 @@
 스터디 일정은 스터디 진행이 확정된 후에 정할 예정입니다.
 
 ## 팀원 프로필
+
 <p align="center>
 <img src="file:///home/user/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C/1688150189765.jpg" width:"20%", height : "30%">
 <img src="/home/user/다운로드/1694919097629.jpg">
