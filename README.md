@@ -60,6 +60,7 @@
 <!--
 ~~![1694919106438](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/e6fe8352-5017-473a-88ac-09f36ea36330)
 ![1694919119706](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/5b956dea-42a1-4192-84f3-92675bdca533)
+![1694919119706](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/c4314379-7a5f-48b9-bcef-f6cfab86c491)
 ~~
 -->
 정현주
