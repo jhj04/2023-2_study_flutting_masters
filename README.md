@@ -57,6 +57,9 @@
 <img src="file:///home/user/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C/1694919119706.jpg" width="20%", height="30%"/>
 </p>
 
+<!--
+~~![1694919106438](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/e6fe8352-5017-473a-88ac-09f36ea36330)~~
+-->
 정현주
 이레
 이지훈
