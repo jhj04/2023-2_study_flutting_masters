@@ -1,0 +1,26 @@
+body: SizedBox(
+	child: Text('안녕',  
+		style: TextStyle( color: Colors.red),))   
+// Text는 style:안에 style 추가 가능 /
+ Color(0xffaaaaaaa), Color.fromRGBO() / 
+fontsize: , fontweight(폰트 굵기) /
+ letterspacing(자간) 
+
+
+
+// TextButton()
+IconButton()   
+ElevatedButton() 공중에 떠 있는
+ 택일
+
+child : TextButton( child: Text('글자'),
+onPressed:(){},       // 버튼엔 child: onPressed: 넣어야 잘보임.
+style: ButtonStyle()  
+)
+
+
+child:IconButton()
+	icon : Icon(Icons.star),
+	onPressed : (){} // function 넣음
+
+

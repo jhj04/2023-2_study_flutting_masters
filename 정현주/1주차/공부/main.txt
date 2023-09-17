@@ -1,0 +1,45 @@
+본격적인 작성 전 stless 
+
+
+
+void main() {
+    runApp(const MyApp());    #  MyApp() 앱을 시작해주세요
+}
+
+
+# 텍스트 위젯
+
+return MaterialApp(
+    home: Text('abc')  # Text('글내용')
+);
+
+# 아이콘 위젯
+
+return MaterialApp(
+    home: Icon(Icons.shap)  # Icon(Icons.아이콘 이름)
+);
+
+# 이미지 위젯
+
+return MaterialApp(
+    home: Image.asset('assets/이름.png')  # Image.asset('경로')
+);
+
+assets 폴더 -> 이미지 저장 -> 등록(pubspec.yaml 파일)
+
+flutter:
+  assets:
+    - assets/      # 폴더 사용에 대한 명시(pubspec.yaml 파일 수정)
+
+# 컨테이너 위젯
+
+return MaterialApp(
+    home: Container(width : 50, height : 50, color : Colors.blue)  # 네모 박스 넣을 때, 플러터 단위 LP
+);
+
+
+return MaterialApp(
+    home: Center(
+    child : Container(width : 50, height : 50, color : Colors.blue),  # 네모 박스 넣을 때, 플러터 단위 LP
+    )
+);
