@@ -1,6 +1,3 @@
-**텍스트 위젯, 아이콘 위젯, 이미지 위젯, 박스 위젯**
-**Scaffold, Row()**
-
 import 'package:flutter/material.dart';
 
 void main() {
