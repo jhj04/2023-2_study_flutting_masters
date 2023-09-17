@@ -51,10 +51,10 @@
 ## 팀원 프로필
 
 <p align="center>
-<img src="file:///home/user/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C/1688150189765.jpg" width:"20%", height : "30%">
-<img src="file:///home/user/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C/1694919106438.jpg" width:"20%", height : "30%">
-<img src="![1694919097629](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/76a20e75-154a-4946-9f84-4af4b809a0f0)" width:"20%", height : "30%">
-<img src="file:///home/user/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C/1694919119706.jpg" width:"20%", height : "30%">
+<img src="file:///home/user/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C/1688150189765.jpg" width="20%", height="30%"/>
+<img src="file:///home/user/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C/1694919106438.jpg" width="1%", height = "3%"/>
+<img width="1%", height="3%" src" https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/76a20e75-154a-4946-9f84-4af4b809a0f0"/>
+<img src="file:///home/user/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C/1694919119706.jpg" width="20%", height="30%"/>
 </p>
 
 정현주
