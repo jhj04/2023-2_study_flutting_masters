@@ -50,7 +50,7 @@
 
 ## 팀원 프로필
 <p align="center>
-<img src="/home/user/다운로드/1688150189765.jpg">
+<img src="file:///home/user/%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C/1688150189765.jpg" width:"20%", height : "30%">
 <img src="/home/user/다운로드/1694919097629.jpg">
 <img src="/home/user/다운로드/1694919119706.jpg">
 <img src="/home/user/다운로드/1694919106438.jpg">
