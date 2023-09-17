@@ -1,0 +1,43 @@
+# 숙제 리뷰 및 추가 기능 설명
+
+container는 height와 width 조절 가능. Row를 container 또는 Sizedbox로 감싸고 조정.
+
+ex)        bottomNavigationBar : BottomAppBar(
+            child: Container(
+            width:30, height:50
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children:[
+                  Icon(Icons.phone),
+                  Icon(Icons.message),
+                  Icon(Icons.contact_page),
+                ],
+              ),
+            ),
+          )
+
+#박스 디자인
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+
+    return MaterialApp(
+        home: Scaffold(
+          appBar : AppBar( title: Text('앱임')),
+          body: Text('안녕'),
+          bottomNavigationBar : BottomAppBar(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children:[
+                Icon(Icons.phone),
+                Icon(Icons.message),
+                Icon(Icons.contact_page),
+              ],
+            ),
+          ),
+        )
+    );
+  }
+}
