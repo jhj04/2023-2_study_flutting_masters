@@ -60,7 +60,7 @@
 <!--
 ![1694919106438](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/e6fe8352-5017-473a-88ac-09f36ea36330)
 ![1694919119706](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/5b956dea-42a1-4192-84f3-92675bdca533)
-
+![1694919097629](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/8f5adcf9-08ad-475f-bf42-353ecaa560f5)
 ![1688150189765](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/d8dbc17c-4758-4b5b-8c38-43cf0614daa9)
 -->
 정현주
