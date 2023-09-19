@@ -1,1 +1,20 @@
-.
+# 글자와 아이콘 스타일
+return MaterialApp(
+        home: Scaffold(
+          appBar : AppBar( title: Text('앱임')),
+          body: SizedBox(
+            child: Text('안녕하세요', style : TextStyle(
+              color: Colors.red, /*color은 칼라피커로 자유도 높은 색상선택 가능, Color.fromRGBO(r, g, b, opacity)*/
+              fontSize: 30, //그 외에 수많은 것들이 있음
+              fontWeight: FontWeight.w700
+                //아이콘은 color이랑 size만 설정가능
+              
+            ),
+            ),
+          ),
+        )
+    );
+
+
+
+
