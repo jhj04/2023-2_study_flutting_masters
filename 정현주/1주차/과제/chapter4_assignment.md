@@ -79,3 +79,5 @@ Icon 삽입에서 끝나지 않고, actions, IconButton을 이용하여 삽입�
 padding에서 어색한 부분이 있어 EdgeInsets.fromLTRB를 이용하여 정렬해주었으며, style:TextStyle 을 통해 폰트 사이즈, 굵기 등을 설정해보았습니다.
 
 과제를 수행하며 이전보다 많은 코드와 기능이 포함됨을 볼 수 있었으며, 후에 Icons.favorite_border에서, 클릭할 시, Icons.favorite으로 아이콘이 변화하는 기능도 추가해보고 싶다는 생각이 들었습니다.
+
+이번에 수행했던 과제들 중 가장 뿌듯함이 느껴졌던 과제라고 할 수 있으며, 앞으로의 application 개발 스터디 활동이 기대되었습니다.
