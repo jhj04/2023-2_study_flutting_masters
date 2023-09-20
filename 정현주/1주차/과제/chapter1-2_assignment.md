@@ -1,4 +1,4 @@
-'''
+```
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,8 +7,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-'''
-'''
+
   @override
   Widget build(BuildContext context) {
 
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-'''
+```
 
 # 1 강에서의 학습 내용을 바탕으로 특히, bottomNavigationBar 구현이 메인으로 되어있는 과제라고 생각되었습니다.
 # 초기 bottomNavigationBar을 설정했을 때, bar의 높이가 너무 낮아 부자연스럽고 어색한 모습이었기 때문에 bar의 높이를 70으로 높여 설정해주었으며,
