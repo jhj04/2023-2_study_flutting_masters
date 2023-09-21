@@ -15,6 +15,17 @@ return MaterialApp(
         )
     );
 
-
+#앱바 디자인
+   return MaterialApp(
+        home: Scaffold(
+          appBar : AppBar( title: Text('앱임'), //왼쪽 제목
+            leading: Icon(Icons.star), //왼쪽에 넣을 아이콘
+            actions: [Icon(Icons.phone), Icon(Icons.star)], //우측 아이콘들
+          ),
+          body: SizedBox(),
+            )
+          );
+  }
+}
 
 
