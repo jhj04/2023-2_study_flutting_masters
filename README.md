@@ -51,13 +51,15 @@
 ## 팀원 프로필
 
 
-
-
+![2](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/c897d114-b1a2-4dc9-b06a-518895fd24ff)
+asters/assets/129846546/b8a98b4b-e92c-4b9a-ace5-a15152b6181c)
+![4](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/6cf35f49-de0f-45ca-af1d-ee48256f4771)
 ![1](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/83f31e01-77ad-42fc-bb4d-eadf7730a053)
 
 
-정현주
+
 이레
-이지훈
-황연주
 서다솜
+정현주
+황연주
+이지훈
