@@ -28,4 +28,17 @@ return MaterialApp(
   }
 }
 
-
+#버튼 종류와 디자인
+    return MaterialApp(
+        home: Scaffold(
+          appBar : AppBar(),
+          body: SizedBox(
+            child: IconButton(
+              icon : Icon(Icons.star),
+              onPressed: (){},//ElevatedButton(child: Text('vfv') , onPressed: (){}, //style: ButtonStyle() 얘는 버튼 디자인
+            ) // TextButton(child: Text('vvip'), onPressed: (){}) //IconButton() ,
+          ),
+            )
+          );
+  }
+}
