@@ -18,4 +18,41 @@ return MaterialApp(
 
 # Devtool 을 사용해 화면에서 각 요소, 위젯들이 차지하는 공간을 한 눈에 볼 수 있음
 
-#
+# 4강 과제 예시 코드
+ return MaterialApp(
+        home: Scaffold(
+          appBar :  AppBar(
+            backgroundColor: Colors.white,
+          ),
+          body:Container(
+            child: Row(
+            children:[
+              Image.asset('camere.png', width:150,),
+        Container(height:150,
+          width: 300,
+          padding: EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+          children:[
+            Text("캐논 DSLR 100D (단렌즈, 충전기 16기가SD 포함)"),
+            Text("성동구 행당동 = 끌올 10분 전", style: TextStyle(),),
+            Text("210,000원"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children:[
+                Icon(Icons.favorite),
+                Text("4"),
+              ],
+            ),
+          ],
+        ),
+        ),
+      ],
+    ),
+          ),
+
+        )
+        );
+}
+}
+
