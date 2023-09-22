@@ -1,0 +1,43 @@
+   return MaterialApp(
+        home: Scaffold(
+          appBar :  AppBar(
+            leading: Icon(Icons.arrow_drop_down),
+            iconTheme : IconThemeData(color: Colors.black),
+            title: Text('금호동 3가',
+                style: TextStyle(color: Colors.black)
+            ),
+            actions : [
+                     Icon(Icons.search),
+                      Icon(Icons.dehaze),
+                      Icon(Icons.notifications),
+             ],
+            leadingWidth: 40,
+            backgroundColor: Colors.white,
+              ),
+          body: SizedBox(
+            child: Row(
+              children:
+                  [
+                    Image.asset("camere.png"),
+                  Container(
+                    child: Column(
+                      children:[
+                        Text("캐논 DSLR 100D (단렌즈, 충전기 16기가SD 포함)"),
+                        Text("성동구 행당동 = 끌올 10분 전"),
+                        Text("210,000원"),
+                        Row(
+                          children:[
+                            Icon(Icons.star),
+                          Text("4"),
+                          ],
+                    ),
+],
+                  ),
+                  ),
+                  ],
+            ),
+          ),
+    )
+    );
+}
+}
