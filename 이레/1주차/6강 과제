@@ -1,1 +1,66 @@
-.
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+
+    return MaterialApp(
+        home: Scaffold(
+          appBar :  AppBar(),
+          body: ListView(
+              children:[
+                Custom(),
+                Custom(),
+                Custom(),
+
+              ],
+            ),
+            bottomNavigationBar: BottomAppBar(
+              child: bottom(),
+            ),
+        ),
+        );
+}
+}
+
+class Custom extends StatelessWidget {
+  const Custom({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height:30,
+      child: Row(
+        children: [
+          Flexible( child: Icon(Icons.portrait), flex:1,),
+          Flexible( child: Text('홍길동'), flex:9,),
+        ],
+      )
+    );
+  }
+}
+
+class bottom extends StatelessWidget {
+  const bottom({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    children:[
+      Icon(Icons.phone),
+      Icon(Icons.message),
+      Icon(Icons.file_copy),
+    ],
+    ),
+    );
+  }
+}
+
