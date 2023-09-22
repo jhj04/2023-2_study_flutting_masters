@@ -11,13 +11,56 @@
         );
 }
 }
+//위젯이 화면을 넘어갈 때 스크롤바를 자동으로 만든다. 또한 스크롤 위치 감시가 가능하고 메모리 절약을 할 수 있다.
+화면 바깥에 있는 정보를 삭제해주면서 메모리 관리를 좋게한다. 인스타 피드를 보는 창이나 쇼핑몰 페이지도 리스트 뷰로 만들었다고 볼 수 있음.
 
 # class 문법
 
+class name extends StatelessWidget {
+  const name({super.key});
 
-# 커스텀 위젯 사용하는 법
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
 
-빈 공간에 stless 작성하고 엔터 누르기
-생성되는 함수의 이름을 설정하고 내용 넣기
+1) 첫 번째 줄 
+class : 커스텀 위젯은 함수로 만듦. class는 함수, 변수의 보관함이라고 생각하면 됨.
+extends : 이미 완성된 위젯을 복사해서 custom을 만듦.
+StatelessWidget : 커스텀 위젯을 만들 때 복사되는 완벽한 위젯 완성품.
+
+2) 두 번째 줄
+어려운 내용이라 몰라도 됨 강의에서 생략함.
+
+3) 세 번째 줄
+bulid(context){} : 함수를 만들 때 사용하는 bulid 함수. 꼭 있어야지 커스텀 위젯으로 인식됨.
+
+4) 네 번째 줄
+return: 리턴 내용 뒤에 축약할 위젯 넣기
+
+5) @override
+불러온 함수간의 중복 내용이 생길 때 자신의 것을 먼저 적용시켜달라는 뜻 
+
+
+# 커스텀 위젯과 변 사용하는 법
+
+빈 공간에 stless 작성하고 Tab 누르기
+
+class (1) extends StatelessWidget {
+  const (1)({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return (2)
+  }
+}
+
+공간 (1)에 생성되는 함수의 이름을 적고 공간 (2)에 축약할 위 넣기
 
 그 외에 변수를 사용하는 방법도 있음
+ex) var a = Container(Text('ded'))
+하지만 변수를 사용하면 성능상 이슈가 생길 수 있음. 불변하는 정보들만 변수에 담아야함.
+변하는 정보들은 커스텀 위젯을 만들어야함.
+커스텀 위젯을 너무 많이 만들면 state 관리가 힘들어진다는 단점이 있다.
+재사용이 많은 ui들이나 큰 페이지만 커스텀 위젯으로 만들 것.
