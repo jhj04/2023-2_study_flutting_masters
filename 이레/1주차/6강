@@ -1,1 +1,23 @@
-.
+# ListView 사용 코드
+    return MaterialApp(
+        home: Scaffold(
+          appBar :  AppBar(),
+          body: ListView(
+              children:[
+                Text('ddod'),
+              ],
+            ),
+        ),
+        );
+}
+}
+
+# class 문법
+
+
+# 커스텀 위젯 사용하는 법
+
+빈 공간에 stless 작성하고 엔터 누르기
+생성되는 함수의 이름을 설정하고 내용 넣기
+
+그 외에 변수를 사용하는 방법도 있음
