@@ -1,1 +1,21 @@
-.
+# Flexible과 Expended
+return MaterialApp(
+        home: Scaffold(
+          appBar :  AppBar(
+            backgroundColor: Colors.white,
+          ),
+          body: Column( //Row 하면 세로선으로 나눔
+           children:[
+              Flexible(child: Container(color: Colors.blue), flex: 3), //flex는 전체 화면에서 차지하는 비율을 나타냄
+              Flexible(child: Container(color: Colors.red),flex:7) ,
+             //Expended = flex 1 가진 Flexible 박스와 같음, 본인만 flex가 있으면 남은 공간 전체를 차지함
+            ]
+          )
+    )
+    );
+}
+}
+
+# Devtool 을 사용해 화면에서 각 요소, 위젯들이 차지하는 공간을 한 눈에 볼 수 있음
+
+#
