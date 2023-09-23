@@ -50,7 +50,7 @@
 
 ## 팀원 프로필
 
-
+![3-1](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/041a49c5-bc97-4d00-8716-c22e29444d17)
 ![2](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/c897d114-b1a2-4dc9-b06a-518895fd24ff)
 ![4](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/6cf35f49-de0f-45ca-af1d-ee48256f4771)
 ![1](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/83f31e01-77ad-42fc-bb4d-eadf7730a053)
