@@ -50,6 +50,16 @@
 
 ## 팀원 프로필
 
+<table>
+  <td align="center"><a href="https://github.com/dasom040819"><img src="https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/c897d114-b1a2-4dc9-b06a-518895fd24ff" width="100px;" alt=""/><br /><sub><b>서다솜</b></sub></a><br /><a href="https://github.com/dasom040819" title="Code">💻</a></td>
+  <td align="center"><a href="https://github.com/dorerilla"><img src="https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/041a49c5-bc97-4d00-8716-c22e29444d17" width="100px;" alt=""/><br /><sub><b>이레</b></sub></a><br /><a href="https://github.com/dorerilla" title="Code">💻</a></td>
+  <td align="center"><a href="https://github.com/Jihun-1002"><img src="https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/a5b6b998-f470-4372-9c51-7bb57b53d189" width="100px;" alt=""/><br /><sub><b>이지훈</b></sub></a><br /><a href="https://github.com/Jihun-1002" title="Code">💻</a></td>
+  <td align="center"><a href="https://github.com/jhj04"><img src="https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/6cf35f49-de0f-45ca-af1d-ee48256f4771" width="100px;" alt=""/><br /><sub><b>정현주</b></sub></a><br /><a href="https://github.com/jhj04" title="Code">💻</a></td>
+  <td align="center"><a href="https://github.com/jooya38"><img src="https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/83f31e01-77ad-42fc-bb4d-eadf7730a053" width="100px;" alt=""/><br /><sub><b>황연주</b></sub></a><br /><a href="https://github.com/jooya38" title="Code">💻</a></td>
+</table>
+
+
+
 # ![3-1](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/041a49c5-bc97-4d00-8716-c22e29444d17)  이레  
 # ![2](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/c897d114-b1a2-4dc9-b06a-518895fd24ff)  서다솜  
 # ![4](https://github.com/jhj04/2023-2_study_flutting_masters/assets/129846546/6cf35f49-de0f-45ca-af1d-ee48256f4771)  정현주  
