@@ -10,7 +10,8 @@ void main(){
 
   Map<int,String> drinks = {
     1:'사이다',
-    2:'콜라'
+    2:'콜라',
+    3:'아이스티'
   };   // Map
 
   print(drinks); 
