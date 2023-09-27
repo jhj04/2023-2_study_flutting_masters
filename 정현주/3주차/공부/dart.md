@@ -8,6 +8,7 @@ void main() {
 ```
 
 main 함수 -> 메인 함수에서 호출
+
 ; 필수
 
 # The Var Keyword
@@ -20,7 +21,9 @@ void main() {
 
 ```
 함수, 메소드 내부 지역변수 -> var
+
 class 변수 혹은 property 선언 -> 타입 지정
+
 어떤 상태이든 업데이트 가능 (데이터 타입 유지한다면)
 
 
@@ -45,7 +48,9 @@ void main() {
 ```
 
 var 대신 dynamic 가능
+
 이상적으로는 쓰는 것을 피해야하는, 반드시 필요한 상황에서만 사용
+
 정해지지 않았을 때
 
 
@@ -65,6 +70,7 @@ void main() {
 ```
 
 null일 수도 있음을 암시.
+
 ? 필요!!
 
 
@@ -91,7 +97,9 @@ void main() {
 ```
 
 late를 활용하여 나중에 값 넣을 수 있음.
+
 실수 줄여줌. 값을 넣기 전에 사용 불가 data fetching에 유용.
+
 api 관련하여 사용
 
 
@@ -105,7 +113,9 @@ void main() {
 ```
 
 dart의 const는 js의 final과 비슷 (js의 const와는 다름))
+
 compile time constant 생성
+
 수정 불가 + "하드 코딩(컴파일할 때 알고 있음)" -> 사용자 입력이 필요하다면 final 혹은 var
 
 # Basic Data Types
@@ -134,6 +144,7 @@ void main() {
 ```
 
 거의 모두 class 혹은 object
+
 실제 자료형 확인 가능
 
 
@@ -188,6 +199,7 @@ void main() {
 ```
 
 $변수명 사용
+
 계산 필요할 시 "${변수+계산}"
 
 
