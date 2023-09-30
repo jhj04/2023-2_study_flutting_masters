@@ -1,0 +1,63 @@
+Container위젯
+컨테이너 위젯은 요소의 배치나, 크기 조절, 묘사를 가능하게 해 줍니다. 일반적으로 컨테이너를 사용하여 다른 위젯을 포함하고
+일부 스타일링 특성을 컨테이너 자체와 해당 하위 요소에 적용할 수 있습니다.
+
+Stack 위젯
+위젯들을 여러개 서로 겹치게 배치할때 쓰는 위젯
+위젯위에 올라간 듯 보이는 효과
+
+Richtext 위젯
+* RichText는 Flutter 위젯으로, 다양한 스타일로 텍스트를 표시할 수 있습니다.
+* 하나의 줄이나 단락에서 볼드체, 이탤릭체, 밑줄 등과 같은 다른 스타일을 조합하고자 할 때 유용합니다.
+* RichText는 각 노드마다 다른 스타일을 정의하기 위해 TextSpans의 트리를 사용합니다.
+* 기준선 정렬을 유지하며 제스처 인식기를 포함하여 상호작용 기능을 추가할 수도 있습니다.
+
+
+AnimatedPositioned 위젯
+* AnimatedPositioned는 자식 위젯의 위치를 애니메이션화할 수 있는 Flutter 위젯입니다.
+* 일반적인 Positioned 위젯과 마찬가지로 Stack의 자식 위젯 목록에 추가할 수 있습니다.
+* AnimatedPositioned는 방향, 너비, 높이 등의 값이 변경될 때 자동으로 변화를 애니메이션화합니다.
+* 이는 리빌드 시 애니메이션 효과를 적용하여 나타내는데 유용하며, 리벌 효과, 슬라이딩 트릭, 위젯의 동적 크기 조정에 활용할 수 있습니다.
+
+
+AnimatedContainer 위젯
+기본 Container와 기본적으로 같다. 다른점이란, 컨테이너 속성(크기, 색상, 테두리반지름)을 변경할 경우 보기좋게 애니메이션 효과와 함께 변경된다는 점이다
+
+
+GestureDetector 위젯
+GestureDetector는 플러터에서 지원하는 모든 제스처들을 구현할 수 있는 위젯
+ 
+onTap	한 번 탭 했을 때
+onDoubleTap	연속으로 두번 탭 했을 때
+onLongPress	길게 누를 때
+onScale	확대하기를 했을 때
+onVerticalDragStart	수직 드래그가 시작되었을 때
+onVerticalDragEnd	수직 드래그가 끝났을 때
+onHorizontalDragStart	수평 드래그가 시작되었을 때
+onHorizontalDragEnd	수평 드래그가 끝났을 때
+onPanStart	드래그가 시작되었을 때
+onPanEnd	드래그가 끝났을 때
+
+
+Textformfield
+TextFormField는
+TextField 처럼 사용자에게 입력 받을 수 있는 입력 양식 위젯이지만
+validator 속성이 있어 유효성 검사가 가능한 것이 특징입니다.
+
+MediaQuery 위젯
+* MediaQuery는 화면 크기와 사용자 선호도에 따라 다른 UI 레이아웃을 생성하는 Flutter 위젯입니다.
+* 이 위젯은 기기의 화면 크기, 방향, 글꼴 크기, 가려진 화면 부분 등에 대한 정보를 제공합니다.
+* build 메소드에서 MediaQuery.of를 호출하여 이 정보를 활용하여 레이아웃을 구성할 수 있습니다.
+* MediaQuery를 사용하여 애니메이션 제한이나 화면 대비 수준과 같은 접근성 정보를 확인할 수 있습니다.
+
+primarySwatch
+primarySwatch:는 ThemeData안에 작성해준다.
+ㄴSwatch는 견본을 의미한다. // 앱에서 기본적으로 사용할 색상 견본을 의미한다고 이해하면 쉽습니다.
+그래서,
+primarySwatch는 특정한 색상을 지정해서 사용한다는 의미보다는,
+특정 색의 응용들을 기본 색상으로 지정해서 사용하겠다는 의미라고 이해하면됩니다.
+
+TextSpan()
+특정 길이의 문자(text)를 한 단위로 하여 스타일(style)을 적용하는데 사용합니다.
+자식 위젯으로 TextSpan 리스트를 가질 수 있으며, 모두 한 문단으로 화면에 그려집니다.
+text 와 children 둘 다 값을 가지면, 자식 위젯 리스트 중 첫번째 위치의 text 값으로 적용됩니다.
