@@ -1,3 +1,4 @@
+```dart
 import 'package:flutter/material.dart';
 import 'package:pomodoro/screens/home_screen.dart';
 
@@ -25,3 +26,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+```
+영상의 코드 대로 치되, 색상의 약간의 변화를 주었습니다.
