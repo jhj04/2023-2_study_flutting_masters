@@ -1,3 +1,4 @@
+```dart
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -144,3 +145,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+```
+
+재생 및 정지 버튼 + 리셋 버튼을 구현했습니다.
