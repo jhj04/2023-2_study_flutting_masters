@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Expanded(
                     child: Container( 
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(50),
+                        borderRadius: BorderRadius.only(topLeft: Radius.circular(50), topRight: Radius.circular(50)),
                         color: Theme.of(context).cardColor,
                       ),
                       child: Column(
@@ -147,4 +147,6 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 ```
 
-재생 및 정지 버튼 + 리셋 버튼을 구현했습니다.
+재생 및 일시정지 버튼 뿐만 아니라 리셋 버튼을 만들어 보았습니다.
+
+또한, container의 border radius에서의 약간의 변형을 해보았습니다.
