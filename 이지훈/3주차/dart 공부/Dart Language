@@ -1,0 +1,29 @@
+객체지향 언어
+user interface 만들기에 최적화
+
+많은 플랫폼에 컴파일 가능
+
+두 개의 컴파일러
+
+dart web
+dart로 쓴 코드를 javascript로 변환해주는 컴파일러
+
+dart native
+dart코드를 여러 cpu의 아키텍쳐에 맞게 변환해줌
+
+JIT
+just-in-time
+dart VM
+코드의 결과를 바로 보여줌
+개발중일때만 쓰임
+느림
+
+AOT
+ahead-of-time
+코딩을 다 했을 때 컴파일할때 아키텍쳐를 컴파일해야함
+컴파일 먼저 그 결과인 바이너리 배포
+빠름
+
+null safety
+
+dartpad.dev

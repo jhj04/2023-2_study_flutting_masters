@@ -1,0 +1,45 @@
+Dart의 자료형
+
+Basic Data Types
+String
+bool
+int
+double
+*object
+num x = 12;
+x = 1.1;
+
+Lists
+var numbers = [1, 2, 3, 4, ];
+List<int>
+numbers.add(1);
+numbers.first
+numbers.last
+collection if
+var givMeFive = true;
+if(giveMeFive) 5,  // true라면 5를 리스트에 추가
+
+String Interpolation
+text에 변수를 추가하는 법
+var name = 'nico';
+var age = 10;
+var greeting = 'Hello everyone, my name is 
+$name and I\'m ${age+2}';
+
+Collection For
+var oldFriends = ['nico', 'lynn'];
+var newFriends = ['Lewis', 'ralph', 'darren',
+for(var friend in oldFriends) "$friend",]
+
+Maps
+var player = {
+  'name': 'nico',
+  'xp': 19.99,
+  'superpower': false,
+};
+Map<int, bool>
+
+Sets
+var numbers = {1, 2, 3, 4};
+순서가 있음
+유니크함

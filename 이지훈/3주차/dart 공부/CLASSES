@@ -1,0 +1,65 @@
+Your First Dart Class
+class Player {
+  String name = 'nico';
+  int xp = 1500;
+
+  void sayHello() {
+    print("Hi my name is $name";
+  }
+}
+
+var player = Player();
+player.name = 'afasdf';
+
+
+Constructors
+Players(String name, int xp){
+  this.name = name;
+  this.xp = xp;
+}
+Player(this.name, this.xp);
+
+
+Named Constructor Parameters
+Player({}){}
+
+
+Named Constructors
+Plyaer.createBluePlayer({required String name, required int age}) :
+this.age = age
+this.name = name,
+this.team = 'blue',
+this.xp = 0;
+
+
+Cascade Notation
+..
+
+
+Enums
+enum Team = { red, blue }
+
+
+Abstract Classes
+abstract class Human{
+  void walk();
+}
+메소드의 이름과 반환타입만 선언가능
+
+
+Inheritance(상속)
+class Player extends Human {}
+
+Player({}):super(name);
+
+
+Mixins
+생성자가 없는 클래스
+class Strong{
+  final double strengthLevel = 1500.99;
+}
+class QuickRunner {
+  void runQuick(){
+    print('eeee')
+
+class Player with Strong, QuickRunner
