@@ -1,36 +1,50 @@
 import 'package:flutter/material.dart';
-import 'package:toonflix/screen/home_screen.dart';
-import 'package:toonflix/widgets/button.dart';
-import 'package:toonflix/widgets/currency_card.dart';
+// import 'package:toonflix/pomodoros_screen/home_screen.dart';
+import 'package:toonflix/pomodoros_widgets/button.dart';
+import 'package:toonflix/pomodoros_widgets/currency_card.dart';
+import 'package:toonflix/services/api_service.dart';
+import 'package:toonflix/webtoon_screens/home_screen.dart';
 
 void main() {
-  runApp(const Pomodoros());
+  ApiService.getTodaysToons();
+  runApp(const Webtoon());
 }
 
-class Pomodoros extends StatelessWidget {
-  const Pomodoros({super.key});
+class Webtoon extends StatelessWidget {
+  const Webtoon({super.key}); // key 사용하는 이유: 위젯의 ID 보내서 식별하기 위해.
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        textTheme: const TextTheme(
-          displayLarge: TextStyle(
-            color: Color(0xFF232B55),
-          ),
-        ),
-        cardColor: const Color(0xFFF4EDDB),
-        colorScheme:
-            ColorScheme.fromSwatch(backgroundColor: const Color(0xFFE7627C)),
-      ),
-      home: const HomeScreen(),
+      home: HomeScreen(),
     );
   }
 }
 
+// class Pomodoros extends StatelessWidget {
+//   const Pomodoros({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       theme: ThemeData(
+//         textTheme: const TextTheme(
+//           displayLarge: TextStyle(
+//             color: Color(0xFF232B55),
+//           ),
+//         ),
+//         cardColor: const Color(0xFFF4EDDB),
+//         colorScheme:
+//             ColorScheme.fromSwatch(backgroundColor: const Color(0xFFE7627C)),
+//       ),
+//       home: const HomeScreen(),
+//     );
+//   }
+// }
+
 //root Widget
-class App extends StatelessWidget {
-  const App({super.key});
+class UIex extends StatelessWidget {
+  const UIex({super.key});
 
   //statelessWidget 상속 받으면 widget 됨-> 위젯은 build를 구현해야함
 
