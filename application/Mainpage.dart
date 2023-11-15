@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: '앱의 이름',
+      title: '앱 이름 뭐로 하나요', //폰에서 위젯 등 하는 거
       home: Mainpage(), //home은 앱이 실행될 때 가장 먼저 보여주는 페이지
     );
   }
@@ -65,18 +65,18 @@ class Mainpage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        '이건 무슨 상품일까',
+                        '마감임박러닝메이트',
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
+                      //컨테이너 넣기
                       Text(
-                        '금호동-끌올 10분전',
+                        '마감기한 임박,
                         style: TextStyle(color: Colors.grey),
                       ),
-                      Text('17000원'),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
-                        children: [Icon(Icons.favorite), Text('4')], //아이콘이랑 글자
+                        children: [Icon(Icons.person)], //아이콘 여러개
                       )
                     ],
                   ),
@@ -85,7 +85,6 @@ class Mainpage extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    )
+      );
+    }
   }
-}
