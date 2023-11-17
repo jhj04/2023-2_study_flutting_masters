@@ -2,18 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:flutting_master_study/screen/profile_screen.dart';
 import 'package:flutting_master_study/screen/setting_screen.dart';
 
-class MypageScreen extends StatelessWidget {
+class MypageScreen extends StatefulWidget {
   const MypageScreen({super.key});
+  @override
+  State<MypageScreen> createState() => _MypageScreenState();
+}
 
-  Widget bookMarkWidget() {
-    return Container(
-      margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
-      width: 127,
-      height: 127,
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey),
-        image: const DecorationImage(
-            image: AssetImage('assets/seoul_moive.jpg'), fit: BoxFit.cover),
+class _MypageScreenState extends State<MypageScreen> {
+  bool clickedBookMark = false, clickedShopping = false, clickedPeople = false;
+
+  Widget bookMarkWidget({BuildContext? context, String? photoName}) {
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(context!,
+            MaterialPageRoute(builder: ((context) => const ProfileScreen())));
+      }, //일단 넘길 페이지를 못 받아서 프로필 스크린으로 넘김.
+      child: Container(
+        margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
+        width: 127,
+        height: 127,
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey),
+          image: DecorationImage(
+            image: AssetImage('assets/$photoName'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        //child: Image.asset("assets/seoul.png"),
       ),
     );
   }
@@ -63,23 +78,23 @@ class MypageScreen extends StatelessWidget {
                                 blurRadius: 3,
                               )
                             ]),
-                        child: Row(
+                        child: Column(
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                  image: const DecorationImage(
-                                      image: AssetImage(
-                                          'assets/kookmin_univ.png'))),
-                              width: 25,
-                              height: 25,
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            const Text("국민대학교"),
-                            const SizedBox(
-                              width: 5,
+                            Row(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(100),
+                                      image: const DecorationImage(
+                                          image: AssetImage(
+                                              'assets/kookmin_univ.png'))),
+                                  width: 25,
+                                  height: 25,
+                                ),
+                                const SizedBox(width: 10),
+                                const Text("국민대학교"),
+                                const SizedBox(width: 5),
+                              ],
                             ),
                           ],
                         ),
@@ -112,9 +127,75 @@ class MypageScreen extends StatelessWidget {
                         ),
                       ),
                     ],
-                  )
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(50),
+                      boxShadow: [
+                        BoxShadow(
+                          offset: const Offset(0, 5),
+                          color: Colors.black.withOpacity(0.3),
+                          blurRadius: 3,
+                        )
+                      ],
+                    ),
+                    child: Row(
+                      children: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: ((context) =>
+                                        const ProfileScreen())));
+                          },
+                          child: const Text(
+                            "소프트웨어학부",
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: ((context) =>
+                                        const ProfileScreen())));
+                          },
+                          child: const Text(
+                            "23학번",
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: ((context) =>
+                                        const ProfileScreen())));
+                          },
+                          child: const Text(
+                            "서다솜",
+                            style: TextStyle(
+                              color: Colors.black,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
-              )
+              ),
             ],
           ),
           Container(
@@ -133,6 +214,11 @@ class MypageScreen extends StatelessWidget {
                   constraints: const BoxConstraints(),
                   onPressed: () {
                     print("clicked the bookmark button");
+                    setState(() {
+                      clickedBookMark = true;
+                      clickedPeople = false;
+                      clickedShopping = false;
+                    });
                   },
                   icon: const Icon(Icons.bookmark),
                 ),
@@ -141,6 +227,11 @@ class MypageScreen extends StatelessWidget {
                   constraints: const BoxConstraints(),
                   onPressed: () {
                     print("clicked the shopping_bag button");
+                    setState(() {
+                      clickedShopping = true;
+                      clickedBookMark = false;
+                      clickedPeople = false;
+                    });
                   },
                   icon: const Icon(Icons.shopping_bag),
                 ),
@@ -149,41 +240,39 @@ class MypageScreen extends StatelessWidget {
                   constraints: const BoxConstraints(),
                   onPressed: () {
                     print("clicked the people button");
+                    setState(() {
+                      clickedPeople = true;
+                      clickedShopping = false;
+                      clickedBookMark = false;
+                    });
                   },
                   icon: const Icon(Icons.people),
                 ),
               ],
             ),
           ),
-          Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
-                width: 127,
-                height: 127,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey),
-                  image: const DecorationImage(
-                      image: AssetImage('assets/seoul_moive.jpg'),
-                      fit: BoxFit.cover),
-                ),
+          if (clickedBookMark)
+            Container(
+              child: Row(
+                children: [
+                  bookMarkWidget(context: context, photoName: 'dlnew.png'),
+                  bookMarkWidget(context: context, photoName: 'ktnew.png'),
+                  bookMarkWidget(context: context, photoName: 'seoul.png'),
+                ],
               ),
-              Container(
-                margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
-                width: 127,
-                height: 123,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.grey)),
+            ),
+          if (clickedShopping)
+            Container(
+              child: const Row(
+                children: [Text("shopping Button")],
               ),
-              Container(
-                margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
-                width: 127,
-                height: 123,
-                decoration:
-                    BoxDecoration(border: Border.all(color: Colors.grey)),
+            ),
+          if (clickedPeople)
+            Container(
+              child: const Row(
+                children: [Text("People Button")],
               ),
-            ],
-          ),
+            ),
         ],
       ),
       bottomSheet: Container(
