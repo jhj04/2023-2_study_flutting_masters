@@ -36,18 +36,33 @@ class Mainpage extends StatelessWidget {
               IconButton(
                 onPressed: () {
                   // 페이지 이동 : 러닝메이트
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => 러닝메이트파일클래스이름()),
+                  );
                 },
                 icon: Icon(Icons.directions_run),
               ),
               IconButton(
                 onPressed: () {
                   // 페이지 이동 : 검색
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => 검색색파일클래스이름()),
+                  );
                 },
                 icon: Icon(Icons.search),
               ),
               IconButton(
                 onPressed: () {
                   // 페이지 이동 : 마이페이지
+                   Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => 마이페이지파일클래스이름()),
+                  );
                 },
                 icon: Icon(Icons.person_rounded),
               ),
@@ -87,11 +102,9 @@ class AppBarTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {
-        // 클릭 시 해당 화면 새로 고침
-      },
-      child: const Text(
+    return const TextButton(
+      onPressed: null, //클릭시 해당 화면 새로고침
+      child: Text(
         '앱의 제목',
         style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
       ),
