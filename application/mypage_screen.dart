@@ -15,7 +15,7 @@ class _MypageScreenState extends State<MypageScreen> {
   bool clickedBookMark = false,
       clickedShopping = false,
       clickedPeople = false; // 상단 row 버튼이 눌렸는가 아닌가
-  bool isBookMark = false; //찜 되었는가 아닌가가
+  bool isBookMark = false, isSelectedDay = false; //찜 되었는가 아닌가가
   Widget bookMarkWidget({BuildContext? context, String? photoName}) {
     return GestureDetector(
       onTap: () {
@@ -46,15 +46,15 @@ class _MypageScreenState extends State<MypageScreen> {
   DateTime focusedDay = DateTime.now();
   Map<DateTime, dynamic> eventSource = {
     DateTime.utc(2023, 11, 25): [
-      Event('1번', false),
+      Event('1번'),
     ],
     DateTime.utc(2023, 11, 24): [
-      Event('2번', false),
-      Event('3번', true),
+      Event('2번'),
+      Event('3번'),
     ],
     DateTime.utc(2023, 11, 26): [
-      Event('4번', false),
-      Event('5번', true),
+      Event('4번'),
+      Event('5번'),
     ],
   };
   List<Event> getEventsForDay(DateTime day) {
@@ -62,7 +62,7 @@ class _MypageScreenState extends State<MypageScreen> {
   }
 
   var _selectedDay;
-  var _focusedDay = DateTime.now();
+  final _focusedDay = DateTime.now();
 // final events = LinkedHashMap(
 //   equals: isSameDay,
 // )..addAll(eventSource);
@@ -296,8 +296,8 @@ class _MypageScreenState extends State<MypageScreen> {
               ],
             ),
           if (clickedShopping) //calender
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
                     width: 500,
@@ -313,15 +313,16 @@ class _MypageScreenState extends State<MypageScreen> {
                       onDaySelected:
                           (DateTime selectedDay, DateTime focusedDay) {
                         setState(() {
-                          _selectedDay = selectedDay;
-                          _focusedDay = focusedDay;
+                          this.selectedDay = selectedDay;
+                          this.focusedDay = focusedDay;
+                          isSelectedDay = true;
                         });
                       },
                       selectedDayPredicate: (DateTime day) {
                         return isSameDay(selectedDay, day);
                       },
                       onPageChanged: (focusedDay) {
-                        _focusedDay = focusedDay;
+                        this.focusedDay = focusedDay;
                       },
                       eventLoader: (day) {
                         return getEventsForDay(day);
@@ -353,11 +354,17 @@ class _MypageScreenState extends State<MypageScreen> {
                           }
                           return null;
                         },
-                        todayBuilder: (context, day, _) {
-                          return CalendarCellBuilder(context, day, _);
-                        },
+                        // todayBuilder: (context, day, _) {
+                        //   return CalendarCellBuilder(context, day, _);
+                        // },
                       ),
-                    ))
+                    )),
+                // if (isSelectedDay) //
+                //   ListView(
+                //     children: [
+                //       Text(eventSource[selectedDay].toString() ?? ""),
+                //     ],
+                //   ),
               ],
             ),
           if (clickedPeople) //현주 코드 받아와서 글 목록 가져오기
@@ -391,28 +398,19 @@ class _MypageScreenState extends State<MypageScreen> {
     do stuff
     */
     return Container(
-      padding: const EdgeInsets.all(3),
-      child: Container(
-        padding: const EdgeInsets.only(top: 3, bottom: 3),
-        width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-            border: Border.all(color: Colors.green, width: 3),
-            borderRadius: const BorderRadius.all(Radius.circular(7)),
-            color: Colors.yellow),
-        child: Column(
-          children: [
-            Text(
-              dateTime.toUtc().toString(),
-              style: const TextStyle(fontSize: 17),
-            ),
-            const Expanded(child: Text("")),
-            Text(
-              eventSource[dateTime],
-              textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 12, color: Colors.black),
-            ),
-          ],
-        ),
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.green, width: 3),
+          borderRadius: const BorderRadius.all(Radius.circular(7)),
+          color: Colors.yellow),
+      child: Column(
+        children: [
+          Text(
+            eventSource[dateTime.toUtc()].toString(),
+            textAlign: TextAlign.center,
+            style: const TextStyle(fontSize: 12, color: Colors.black),
+          ),
+        ],
       ),
     );
   }
@@ -470,8 +468,7 @@ class _MypageScreenState extends State<MypageScreen> {
 
 class Event {
   String title;
-  bool complete;
-  Event(this.title, this.complete);
+  Event(this.title);
   @override
   String toString() => title;
 }
