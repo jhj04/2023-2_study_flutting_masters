@@ -1,6 +1,9 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 import 'package:flutting_master_study/screen/profile_screen.dart';
 import 'package:flutting_master_study/screen/setting_screen.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class MypageScreen extends StatefulWidget {
   const MypageScreen({super.key});
@@ -9,8 +12,10 @@ class MypageScreen extends StatefulWidget {
 }
 
 class _MypageScreenState extends State<MypageScreen> {
-  bool clickedBookMark = false, clickedShopping = false, clickedPeople = false;
-
+  bool clickedBookMark = false,
+      clickedShopping = false,
+      clickedPeople = false; // 상단 row 버튼이 눌렸는가 아닌가
+  bool isBookMark = false; //찜 되었는가 아닌가가
   Widget bookMarkWidget({BuildContext? context, String? photoName}) {
     return GestureDetector(
       onTap: () {
@@ -32,6 +37,35 @@ class _MypageScreenState extends State<MypageScreen> {
       ),
     );
   }
+
+  DateTime selectedDay = DateTime(
+    DateTime.now().year,
+    DateTime.now().month,
+    DateTime.now().day,
+  );
+  DateTime focusedDay = DateTime.now();
+  Map<DateTime, dynamic> eventSource = {
+    DateTime.utc(2023, 11, 25): [
+      Event('1번', false),
+    ],
+    DateTime.utc(2023, 11, 24): [
+      Event('2번', false),
+      Event('3번', true),
+    ],
+    DateTime.utc(2023, 11, 26): [
+      Event('4번', false),
+      Event('5번', true),
+    ],
+  };
+  List<Event> getEventsForDay(DateTime day) {
+    return eventSource[day] ?? [];
+  }
+
+  var _selectedDay;
+  var _focusedDay = DateTime.now();
+// final events = LinkedHashMap(
+//   equals: isSameDay,
+// )..addAll(eventSource);
 
   @override
   Widget build(BuildContext context) {
@@ -202,6 +236,7 @@ class _MypageScreenState extends State<MypageScreen> {
             padding: const EdgeInsets.only(top: 5, bottom: 5),
             margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
             decoration: BoxDecoration(
+              color: const Color(0xff0AEFB8),
               border: Border.all(
                 color: Colors.black.withAlpha(100),
               ),
@@ -226,14 +261,14 @@ class _MypageScreenState extends State<MypageScreen> {
                   padding: EdgeInsets.zero,
                   constraints: const BoxConstraints(),
                   onPressed: () {
-                    print("clicked the shopping_bag button");
+                    print("clicked the Calendar button");
                     setState(() {
                       clickedShopping = true;
                       clickedBookMark = false;
                       clickedPeople = false;
                     });
                   },
-                  icon: const Icon(Icons.shopping_bag),
+                  icon: const Icon(Icons.calendar_today_outlined),
                 ),
                 IconButton(
                   padding: EdgeInsets.zero,
@@ -252,26 +287,82 @@ class _MypageScreenState extends State<MypageScreen> {
             ),
           ),
           if (clickedBookMark)
-            Container(
-              child: Row(
-                children: [
+            Row(
+              children: [
+                if (isBookMark) //그리드뷰 사용하기!! 참고 "https://ojlog.tistory.com/3"
                   bookMarkWidget(context: context, photoName: 'dlnew.png'),
-                  bookMarkWidget(context: context, photoName: 'ktnew.png'),
-                  bookMarkWidget(context: context, photoName: 'seoul.png'),
-                ],
-              ),
+                bookMarkWidget(context: context, photoName: 'ktnew.png'),
+                bookMarkWidget(context: context, photoName: 'seoul.png'),
+              ],
             ),
-          if (clickedShopping)
-            Container(
-              child: const Row(
-                children: [Text("shopping Button")],
-              ),
+          if (clickedShopping) //calender
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                    width: 500,
+                    height: 400,
+                    child: TableCalendar(
+                      headerStyle: const HeaderStyle(
+                        formatButtonVisible: false,
+                      ),
+                      locale: 'ko_KR',
+                      focusedDay: _focusedDay,
+                      firstDay: DateTime.utc(2010, 10, 16),
+                      lastDay: DateTime.utc(2030, 3, 14),
+                      onDaySelected:
+                          (DateTime selectedDay, DateTime focusedDay) {
+                        setState(() {
+                          _selectedDay = selectedDay;
+                          _focusedDay = focusedDay;
+                        });
+                      },
+                      selectedDayPredicate: (DateTime day) {
+                        return isSameDay(selectedDay, day);
+                      },
+                      onPageChanged: (focusedDay) {
+                        _focusedDay = focusedDay;
+                      },
+                      eventLoader: (day) {
+                        return getEventsForDay(day);
+                      },
+                      calendarBuilders: CalendarBuilders(
+                        dowBuilder: (context, day) {
+                          switch (day.weekday) {
+                            case 1:
+                              return const Center(child: Text('월'));
+                            case 2:
+                              return const Center(child: Text('화'));
+                            case 3:
+                              return const Center(child: Text('수'));
+                            case 4:
+                              return const Center(child: Text('목'));
+                            case 5:
+                              return const Center(child: Text('금'));
+                            case 6:
+                              return const Center(
+                                  child: Text(
+                                '토',
+                                style: TextStyle(color: Colors.blue),
+                              ));
+                            case 7:
+                              return const Center(
+                                child: Text('일',
+                                    style: TextStyle(color: Colors.red)),
+                              );
+                          }
+                          return null;
+                        },
+                        todayBuilder: (context, day, _) {
+                          return CalendarCellBuilder(context, day, _);
+                        },
+                      ),
+                    ))
+              ],
             ),
-          if (clickedPeople)
-            Container(
-              child: const Row(
-                children: [Text("People Button")],
-              ),
+          if (clickedPeople) //현주 코드 받아와서 글 목록 가져오기
+            const Row(
+              children: [Text("People Button")],
             ),
         ],
       ),
@@ -286,7 +377,7 @@ class _MypageScreenState extends State<MypageScreen> {
         child: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Icon(Icons.calendar_month_outlined),
+            Icon(Icons.airplay_rounded),
             Icon(Icons.newspaper_outlined),
             Icon(Icons.person),
           ],
@@ -294,4 +385,93 @@ class _MypageScreenState extends State<MypageScreen> {
       ),
     );
   }
+
+  Widget CalendarCellBuilder(BuildContext context, DateTime dateTime, _) {
+    /*
+    do stuff
+    */
+    return Container(
+      padding: const EdgeInsets.all(3),
+      child: Container(
+        padding: const EdgeInsets.only(top: 3, bottom: 3),
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+            border: Border.all(color: Colors.green, width: 3),
+            borderRadius: const BorderRadius.all(Radius.circular(7)),
+            color: Colors.yellow),
+        child: Column(
+          children: [
+            Text(
+              dateTime.toUtc().toString(),
+              style: const TextStyle(fontSize: 17),
+            ),
+            const Expanded(child: Text("")),
+            Text(
+              eventSource[dateTime],
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 12, color: Colors.black),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+//   SizedBox CalendarWidget() {
+//     return SizedBox(
+//       width: 500,
+//       height: 400,
+//       child: TableCalendar(
+//         headerStyle: const HeaderStyle(
+//           formatButtonVisible: false,
+//         ),
+//         locale: 'ko_KR',
+//         focusedDay: focusedDay,
+//         firstDay: DateTime.utc(2010, 10, 16),
+//         lastDay: DateTime.utc(2030, 3, 14),
+//         onDaySelected: (DateTime selectedDay, DateTime focusedDay) {
+//           setState(() {
+//             this.selectedDay = selectedDay;
+//             this.focusedDay = focusedDay;
+//           });
+//         },
+//         eventLoader: (day) {
+//           return getEventsForDay(day);
+//         },
+//         calendarBuilders: CalendarBuilders(dowBuilder: (context, day) {
+//           switch (day.weekday) {
+//             case 1:
+//               return const Center(child: Text('월'));
+//             case 2:
+//               return const Center(child: Text('화'));
+//             case 3:
+//               return const Center(child: Text('수'));
+//             case 4:
+//               return const Center(child: Text('목'));
+//             case 5:
+//               return const Center(child: Text('금'));
+//             case 6:
+//               return const Center(
+//                   child: Text(
+//                 '토',
+//                 style: TextStyle(color: Colors.blue),
+//               ));
+//             case 7:
+//               return const Center(
+//                 child: Text('일', style: TextStyle(color: Colors.red)),
+//               );
+//           }
+//           return null;
+//         }),
+//       ),
+//     );
+//   }
+// }
+}
+
+class Event {
+  String title;
+  bool complete;
+  Event(this.title, this.complete);
+  @override
+  String toString() => title;
 }
