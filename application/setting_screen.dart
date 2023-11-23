@@ -8,6 +8,11 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _SettingScreenState extends State<SettingScreen> {
+  bool isSetting = false,
+      isFAQ = false,
+      isEvaluation = false,
+      isPersonal = false,
+      isVersion = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +66,17 @@ class _SettingScreenState extends State<SettingScreen> {
               color: Colors.black,
             )),
         onPressed: () {
-          print("$name");
+          if (isSetting) {
+            print("$name");
+          } else if (isFAQ) {
+            print("$name");
+          } else if (isEvaluation) {
+            print("$name");
+          } else if (isPersonal) {
+            print("$name");
+          } else if (isVersion) {
+            print("$name");
+          }
         },
         child: Text(
           "$name",

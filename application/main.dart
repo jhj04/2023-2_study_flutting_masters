@@ -3,8 +3,8 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'Mainpage.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  initializeDateFormatting().then((_) => runApp(const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
