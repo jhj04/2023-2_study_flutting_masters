@@ -1,28 +1,62 @@
 import 'package:flutter/material.dart';
-//import 'dart:ui' as ui;
+import 'dart:ui' as ui;
 
 void main() {
   runApp(
     MaterialApp(
-      home: Search(),
+      home: MyApp(),
     ),
   );
 }
 
-class Search extends StatefulWidget {
-  const Search({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<Search> {
+class _MyAppState extends State<MyApp> {
   TextEditingController _searchController = TextEditingController();
   List<String> _suggestions = [
     '스터디',
     '공모전',
     '동아리',
+    '채용',
+    '모집',
+    '행사',
   ];
+
+  final Map<String, List<String>> _imageMap = {
+    '채용': [
+      'assets/post/DL.jpg',
+      'assets/post/KT.jpg',
+    ],
+    '모집': [
+      'assets/post/SYNC.jpg',
+      'assets/post/UST.jpg',
+      'assets/post/dongdaemoon.jpg',
+      'assets/post/ontact.jpg',
+      'assets/post/oonhang.jpg',
+      'assets/post/daehakonejungsi.jpg',
+      'assets/post/filatess.jpg',
+      'assets/post/hangong.jpg',
+    ],
+    '행사': [
+      'assets/post/globaldream.jpg',
+      'assets/post/deeprunning.jpg',
+      'assets/post/seoulmovie.jpg',
+      'assets/post/seouleurope.jpg',
+      'assets/post/europedesign.jpg',
+      'assets/post/europedreamers.jpg',
+      'assets/post/europefashion.jpg',
+      'assets/post/gyungi.jpg',
+      'assets/post/jinroroadmap.jpg',
+      'assets/post/changuie.jpg',
+      'assets/post/arapstartup.jpg',
+    ],
+  };
+
   List<String> _searchResults = [];
   int _selectedItemIndex = -1;
 
@@ -100,6 +134,20 @@ class _MyAppState extends State<Search> {
                               : Colors.transparent,
                           child: ListTile(
                             title: Text(_searchResults[index]),
+                            subtitle: _imageMap?[_searchResults[index]] != null
+                                ? Column(
+                                    children: _imageMap![_searchResults[index]]!
+                                      .map((imagePath) => Padding(
+                                        padding: EdgeInsets.only(right: 8),
+                                        child: Image.asset(
+                                          imagePath,
+                                          height: 900, // 이미지 크기 조절을 위해 필요한 경우 수정
+                                          width: 600,  // 이미지 크기 조절을 위해 필요한 경우 수정
+                                        ),
+                                      ))
+                                      .toList(),
+                                  )
+                                : SizedBox(),
                           ),
                         ),
                       );
@@ -107,15 +155,6 @@ class _MyAppState extends State<Search> {
                   ),
                 )
               : SizedBox(),
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.all(16.0),
-              color: Colors.grey[200],
-              child: Text(
-                '바디',
-              ),
-            ),
-          ),
         ],
       ),
     );
@@ -129,5 +168,11 @@ class _MyAppState extends State<Search> {
           .where((element) => element.toLowerCase().contains(query.toLowerCase()))
           .toList();
     });
+
+    // '채용', '모집', '행사' 중 하나만을 포함하도록 필터링
+    if (_searchResults.isNotEmpty) {
+      _searchResults.removeWhere((result) =>
+          !['채용', '모집', '행사'].contains(result.toLowerCase()));
+    }
   }
 }
